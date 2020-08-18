@@ -42,7 +42,7 @@ public class RawTransaction {
 	private BigInteger gas;
 	private String to;
 	private BigInteger value;
-	private BigInteger storageLimit;
+	//private BigInteger storageLimit;
 	private BigInteger epochHeight;
 	private BigInteger chainId;
 	private String data;
@@ -55,7 +55,7 @@ public class RawTransaction {
 		tx.gas = gas;
 		tx.to = to;
 		tx.value = value;
-		tx.storageLimit = storageLimit;
+		//tx.storageLimit = storageLimit;
 		tx.epochHeight = epochHeight;
 		tx.chainId = DefaultChainId.get();
 		tx.data = data;
@@ -112,7 +112,7 @@ public class RawTransaction {
 		}
 
 		values.add(RlpString.create(this.value));
-		values.add(RlpString.create(this.storageLimit));
+		//values.add(RlpString.create(this.storageLimit));
 		values.add(RlpString.create(this.epochHeight));
 		values.add(RlpString.create(this.chainId));
 		values.add(RlpString.create(Numeric.hexStringToByteArray(this.data == null ? "" : this.data)));
@@ -160,13 +160,13 @@ public class RawTransaction {
 		this.value = value;
 	}
 	
-	public BigInteger getStorageLimit() {
-		return storageLimit;
-	}
-	
-	public void setStorageLimit(BigInteger storageLimit) {
-		this.storageLimit = storageLimit;
-	}
+//	public BigInteger getStorageLimit() {
+//		return storageLimit;
+//	}
+//	
+//	public void setStorageLimit(BigInteger storageLimit) {
+//		this.storageLimit = storageLimit;
+//	}
 	
 	public BigInteger getEpochHeight() {
 		return epochHeight;
