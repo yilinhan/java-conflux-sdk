@@ -9,7 +9,8 @@ public class Status {
 	public static class Response extends CfxResponse<Status> {}
 	
     private String bestHash;
-    private String chainId;
+    //private String chainId;
+    private String bestCandidateHash;
     private String epochNumber;
     private String blockNumber;
     private String pendingTxNumber;
@@ -22,19 +23,27 @@ public class Status {
 		this.bestHash = bestHash;
 	}
     
-    public BigInteger getChainId() {
-		return Numeric.decodeQuantity(this.chainId);
-	}
-    
-    public void setChainId(String chainId) {
-		this.chainId = chainId;
-	}
+//    public BigInteger getChainId() {
+//		return Numeric.decodeQuantity(this.chainId);
+//	}
+//    
+//    public void setChainId(String chainId) {
+//		this.chainId = chainId;
+//	}
     
     public BigInteger getEpochNumber() {
 		return Numeric.decodeQuantity(this.epochNumber);
 	}
     
-    public void setEpochNumber(String epochNumber) {
+    public String getBestCandidateHash() {
+		return bestCandidateHash;
+	}
+
+	public void setBestCandidateHash(String bestCandidateHash) {
+		this.bestCandidateHash = bestCandidateHash;
+	}
+
+	public void setEpochNumber(String epochNumber) {
 		this.epochNumber = epochNumber;
 	}
     
